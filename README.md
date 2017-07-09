@@ -14,7 +14,7 @@ To Run:
 	If the FEN string is given through a text file, run the following command:
 		python3 fenChallenge.py <text file containing FEN string>
 		example: python3 fenChallenge.py fenStr1.txt
-	If the FEN string is given via the command line, run the following command (replacing the FEN string arguments with your own):
+	If the FEN string is given via the command line, run the following command:
 		python3 fenChallenge.py <Valid FEN string>
 		example: python3 fenChallenge.py rnbqkbnr/pppppppp/8/8/8/P7/1PPPPPPP/RNBQKBNR w KQkq - 0 1
 
