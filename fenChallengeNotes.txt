@@ -1,0 +1,76 @@
+FEN Parsing Challenge
+Started: July 7, 2017
+Completed: July 8, 2017
+Shayla Draper
+
+Task One: Parse FEN
+	- Ignore after the first space
+	- Parsing
+	- Each line is seperated with a '/'
+		- 8 sections of info
+
+	First Step: Create Board
+		- Create board with basic layout (only spaces--no peices)
+		Test for:
+			- Generate Board correctly - VERIFIED
+			- Does the format look okay - VERIFIED
+
+	Second Step: Parse FEN
+		- Parse the FEN string up until the first space
+			- split by space and take the first string given
+			- split resulting string by '/'
+			- read each result char by char
+				- if char is int, move currentChar to resulting location
+				- if char is char, fill in currentChar as indicated
+		Test for:
+			- Correct splitting of both spaces (VERIFIED) and '/' (VERIFIED) - VERIFIED
+			- if char is int, ignore number of spaces (fill blank) - VERIFIED
+			- if char is char, correct placement in [[]] - VERIFIED
+			- correct printing for initial set up - VERIFIED
+			- correct printing for
+				- rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R - VERIFIED
+
+	Still needed for T1:
+		- Where are we reading the string to parse from? Assumed reading from a file was okay, also added command line read
+		- Board output looks okay.  However, extra space at end.  Need to fix? Removed Extra white space at the end of the line.
+
+Task Two: Update FEN
+	First Step: Update Board
+		- The board is well indexed in a 2D array, this means that I just need to pull the correct indexes and update those.
+		- Possible issue: capture of a peice
+			- Will need to account for this capture by checking to see if a peice already occupies the space
+		Test for:
+			Did the board update correctly for the 2 examples given?
+			1 - VERIFIED
+			2 - VERIFIED
+
+	Second Step: Update FEN from Board
+		- Now that the board is updated, all I need to do is form a quick read of the board to update the FEN
+		- This method accounts for the capture of a peice
+		- Read the 2D array line by line
+			- if it is a space, add it to a count
+			- every time a character is hit, add the current space count if it isn't 0, then add the character to the updated FEN
+		- Add extra FEN info
+		Test for:
+			Did the FEN update correctly for the 2 examples given?
+				1 - VERIFIED
+				2 - VERIFIED
+
+	Third Step:
+		- Read the move from the request
+		- Look up and understand how to do Python get requests
+		Test for:
+			Did the move download correctly for the 6 examples?
+			1 - VERIFIED
+			2 - VERIFIED
+			3 - VERIFIED
+			4 - VERIFIED
+			5 - VERIFIED
+			6 - VERIFIED
+
+
+Still needed for overall project:
+	- Just updating once? Based on the specs, yes.  Only one update for this challenge.  Otherwise the FEN string would need to be altered and it was stated that we could ignore that.
+	- API call can be different than stated in specs right?  Do I just take the first move offered? - No, can't be different according to the specs.  Fixed problem by ordering the given json into a set
+
+Last check: Added Error calls on initial FEN setup and reading from API.  Added because of error in reading from API due to invaid FEN sting (missing last argument).
