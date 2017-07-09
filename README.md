@@ -1,8 +1,5 @@
 # FEN_Challenge
 FEN Parsing Challenge - BYU
-Author: Shayla Draper
-Full specifications can be found at: http://files.lib.byu.edu/webdev-hire/instructions/
-
 
 Included in this zip repository are the following items:
 1.	fenChallenge.py - This document contains all of my source code.  It is written completely in Python
